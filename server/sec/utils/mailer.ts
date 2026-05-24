@@ -10,7 +10,7 @@ import { IOrderDocuments, statusConfigLocation } from "../types/order.types.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM = 'Ecommerce <onboarding@resend.dev>';
+const FROM = 'Ecommerce <noreply@eranstore.com>';
 
 async function sendVerificationEmail(to: string, verificationLink: string) {
   await resend.emails.send({
