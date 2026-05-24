@@ -121,7 +121,10 @@ export const createOrder: RequestHandler = catchAsync(async (req, res, next) => 
     totalprice: (totalPrice + shipingCost),
   });
 
-  await sendOrderEmail(order, req.user!.email);
+  // Fire-and-forget — don't block the response waiting for email delivery
+  sendOrderEmail(order, req.user!.email).catch((err) => {
+    console.error('Order email failed (non-fatal):', err);
+  });
 
   res.status(201).json({
     status: 'success',
