@@ -50,7 +50,7 @@ async function uploadImage(filePath: string): Promise<string> {
 // ─── Seed data ────────────────────────────────────────────────────────────────
 
 const ADMIN = [{email: "eran.tzar@gmail.com", password: "Test1234" },
-               {email: "ben.somthing@gmail.com", password: "Test1234" }
+               {email: "ben@spacode.co.il", password: "Test1234" }
 ];
 const CUSTOMER_PASSWORD = "Customer1234";
 
