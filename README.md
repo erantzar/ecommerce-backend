@@ -1,7 +1,7 @@
 # E-Commerce Backend API
 
 > Production REST API powering the storefront and CRM dashboard.
-> **Live:** `https://your-railway-app.railway.app` · **Repo:** private
+> **Live:** `https://ecommerce-backend-production-28b4.up.railway.app/api/v1/` · **Repo:** private
 
 ---
 
