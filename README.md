@@ -10,7 +10,7 @@
 | Role | Email | Password |
 |---|---|---|
 | Admin | eran.tzar@gmail.com | Test1234 |
-| Admin | ben.spacode.co.il | Test1234 |
+| Admin | ben@spacode.co.il | Test1234 |
 | Customer | alice@store.com | Customer1234 |
 
 ---
