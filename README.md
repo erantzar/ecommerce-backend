@@ -5,6 +5,16 @@
 
 ---
 
+## Demo Credentials (seeded)
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | eran.tzar@gmail.com | Test1234 |
+| Admin | ben.spacode.co.il | Test1234 |
+| Customer | alice@store.com | Customer1234 |
+
+---
+
 ## Overview
 
 Node.js / Express 5 server built in strict TypeScript. Handles JWT authentication, email verification, role-based access control, product catalogue management, cart operations, order lifecycle, and transactional email delivery via Resend.
@@ -108,9 +118,4 @@ pnpm run seed     # Wipe DB and seed 20 products + demo users with Cloudinary im
 
 ---
 
-## Demo Credentials (seeded)
 
-| Role | Email | Password |
-|---|---|---|
-| Admin | eran.tzar@gmail.com | Test1234 |
-| Customer | alice@store.com | Customer1234 |
