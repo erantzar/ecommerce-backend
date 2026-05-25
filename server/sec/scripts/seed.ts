@@ -49,7 +49,9 @@ async function uploadImage(filePath: string): Promise<string> {
 
 // ─── Seed data ────────────────────────────────────────────────────────────────
 
-const ADMIN = { email: "eran.tzar@gmail.com", password: "Test1234" };
+const ADMIN = [{email: "eran.tzar@gmail.com", password: "Test1234" },
+               {email: "ben.somthing@gmail.com", password: "Test1234" }
+];
 const CUSTOMER_PASSWORD = "Customer1234";
 
 const customers = [
@@ -104,12 +106,20 @@ async function seed() {
   await User.deleteMany({});
   await Product.deleteMany({});
 
-  const adminHash = await bcrypt.hash(ADMIN.password, 10);
+  const adminHash = await bcrypt.hash(ADMIN[0].password, 10);
   const customerHash = await bcrypt.hash(CUSTOMER_PASSWORD, 10);
 
   await User.create({
     name: "Admin User",
-    email: ADMIN.email,
+    email: ADMIN[0].email,
+    password: adminHash,
+    role: "admin",
+    isVerified: false,
+  });
+
+  await User.create({
+    name: "Ben",
+    email: ADMIN[1].email,
     password: adminHash,
     role: "admin",
     isVerified: false,
@@ -149,8 +159,10 @@ async function seed() {
   console.log("✓ 20 products inserted (with images)");
   console.log("");
   console.log("Admin credentials:");
-  console.log(`  email:    ${ADMIN.email}`);
-  console.log(`  password: ${ADMIN.password}`);
+  console.log(`  email:    ${ADMIN[0].email}`);
+  console.log(`  password: ${ADMIN[0].password}`);
+  console.log(`  email:    ${ADMIN[1].email}`);
+  console.log(`  password: ${ADMIN[1].password}`);
   console.log("");
   console.log("Customer credentials (all 9 customers):");
   console.log(`  password: ${CUSTOMER_PASSWORD}`);
