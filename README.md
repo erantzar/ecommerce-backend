@@ -49,8 +49,17 @@ CLOUDINARY_API_SECRET=your_api_secret
 RESEND_API_KEY=re_xxxxxxxxxxxx
 
 # CORS — comma-separated allowed origins
-CORS_CLIENTS=http://localhost:3000,http://localhost:3002
-STOREFRONT_URL=http://localhost:3000
+CORS_CLIENTS={"https://eranstore.com":"storefront",
+              "https://www.eranstore.com":"storefront",
+              "https://ecommerce-crm-xi.vercel.app":"crm",
+              "http://localhost:3002":"crm"}
+
+STOREFRONT_URL=https://eranstore.com
+
+
+
+
+
 ```
 
 ---
@@ -59,7 +68,7 @@ STOREFRONT_URL=http://localhost:3000
 
 ```bash
 # 1. Clone and enter the server directory
-git clone <repo-url>
+git clone <https://github.com/erantzar/ecommerce-backend.git>
 cd server
 
 # 2. Install dependencies
